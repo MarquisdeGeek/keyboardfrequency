@@ -1,0 +1,113 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+     
+    <title>Letter Frequency Keyboard</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+<body>
+ 
+
+ <!--
+Original version:
+
+ https://code.tutsplus.com/tutorials/creating-a-keyboard-with-css-and-jquery--net-5774
+-->
+
+<h1>What what your keyboard look like, if every letter was proportional to its use in the language?</h1>
+
+<ul id="keyboard" class="language_bar">
+</ul>
+
+<br>
+
+<div class="about">
+<p>Concept and Javascript : Steven Goodwin (<a href="http://www.marquisdegeek.com/">@MarquisdeGeek</a>)</p>
+<p>CSS + HTML : <a href="https://code.tutsplus.com/tutorials/creating-a-keyboard-with-css-and-jquery--net-5774">Vasili</a></p>
+<p>Letter frequencies : <a href="https://en.wikipedia.org/wiki/Letter_frequency#Relative_frequencies_of_letters_in_the_English_language">Wikipedia</a></p>
+</div>
+
+<br>
+
+<div id="container">
+    <ul id="keyboard">
+        <span class="row">
+        <li class="symbol"><span class="off">`</span><span class="on">~</span></li>
+        <li class="symbol"><span class="off">1</span><span class="on">!</span></li>
+        <li class="symbol"><span class="off">2</span><span class="on">@</span></li>
+        <li class="symbol"><span class="off">3</span><span class="on">#</span></li>
+        <li class="symbol"><span class="off">4</span><span class="on">$</span></li>
+        <li class="symbol"><span class="off">5</span><span class="on">,</span></li>
+        <li class="symbol"><span class="off">6</span><span class="on">^</span></li>
+        <li class="symbol"><span class="off">7</span><span class="on">&amp;</span></li>
+        <li class="symbol"><span class="off">8</span><span class="on">*</span></li>
+        <li class="symbol"><span class="off">9</span><span class="on">(</span></li>
+        <li class="symbol"><span class="off">0</span><span class="on">)</span></li>
+        <li class="symbol"><span class="off">-</span><span class="on">_</span></li>
+        <li class="symbol"><span class="off">=</span><span class="on">+</span></li>
+        <li class="delete lastitem">delete</li>
+    </span>
+        <span class="row">
+        <li class="tab">tab</li>
+        <li class="letter letter_q" id="key_q"><div class="ccontainer">q</div></a></li>
+        <li class="letter letter_w"><div class="ccontainer">w</div></li>
+        <li class="letter letter_e"><div class="ccontainer">e</div></li>
+        <li class="letter letter_r"><div class="ccontainer">r</div></li>
+        <li class="letter letter_t"><div class="ccontainer">t</div></li>
+        <li class="letter letter_y"><div class="ccontainer">y</div></li>
+        <li class="letter letter_u"><div class="ccontainer">u</div></li>
+        <li class="letter letter_i"><div class="ccontainer">i</div></li>
+        <li class="letter letter_o"><div class="ccontainer">o</div></li>
+        <li class="letter letter_p"><div class="ccontainer">p</div></li>
+        <li class="symbol"><span class="off">[</span><span class="on">{</span></li>
+        <li class="symbol"><span class="off">]</span><span class="on">}</span></li>
+        <li class="symbol lastitem"><span class="off">\</span><span class="on">|</span></li>
+    </span>
+        <span class="row">
+        <li class="capslock">caps lock</li>
+        <li class="letter letter_a"><div class="ccontainer">a</div></li>
+        <li class="letter letter_s"><div class="ccontainer">s</div></li>
+        <li class="letter letter_d"><div class="ccontainer">d</div></li>
+        <li class="letter letter_f"><div class="ccontainer">f</div></li>
+        <li class="letter letter_g"><div class="ccontainer">g</div></li>
+        <li class="letter letter_h"><div class="ccontainer">h</div></li>
+        <li class="letter letter_j"><div class="ccontainer">j</div></li>
+        <li class="letter letter_k"><div class="ccontainer">k</div></li>
+        <li class="letter letter_l"><div class="ccontainer">l</div></li>
+        <li class="symbol"><span class="off">;</span><span class="on">:</span></li>
+        <li class="symbol"><span class="off">'</span><span class="on">&quot;</span></li>
+        <li class="return lastitem">return</li>
+    </span>
+        <span class="row">
+        <li class="left-shift">shift</li>
+        <li class="letter letter_z"><div class="ccontainer">z</div></li>
+        <li class="letter letter_x"><div class="ccontainer">x</div></li>
+        <li class="letter letter_c"><div class="ccontainer">c</div></li>
+        <li class="letter letter_v"><div class="ccontainer">v</div></li>
+        <li class="letter letter_b"><div class="ccontainer">b</div></li>
+        <li class="letter letter_n"><div class="ccontainer">n</div></li>
+        <li class="letter letter_m"><div class="ccontainer">m</div></li>
+        <li class="symbol"><span class="off">,</span><span class="on">&lt;</span></li>
+        <li class="symbol"><span class="off">.</span><span class="on">&gt;</span></li>
+        <li class="symbol"><span class="off">/</span><span class="on">?</span></li>
+        <li class="right-shift lastitem">shift</li>
+    </span>
+        <span class="row">
+        <li class="space lastitem">&nbsp;</li>
+    </span>
+    </ul>
+</div>
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+ 
+<script type="text/javascript" src="js/keyboard_adjust.js"></script>
+<script type="text/javascript" src="js/default.js"></script>
+<script type="text/javascript" src="js/english.js"></script>
+<script type="text/javascript" src="js/french.js"></script>
+<script type="text/javascript" src="js/german.js"></script>
+<script type="text/javascript" src="js/spanish.js"></script>
+<script type="text/javascript" src="js/polish.js"></script>
+
+</body>
+</html>
